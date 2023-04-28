@@ -1,0 +1,22 @@
+.category{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-decoration: none;
+
+}
+
+.img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+.title{
+    height: 66px;
+    line-height: 130%;
+    font-size: 18px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
