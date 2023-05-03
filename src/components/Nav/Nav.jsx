@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import s from './style.module.css'
+import logo from '../../images/logo.png'
+import basket from '../../images/basket_logo.svg'
 
 export default function Nav() {
 
@@ -11,17 +13,29 @@ export default function Nav() {
     <div className={[s.container, !burger ? s.burger_menu: ''].join(' ')}>    
 
         <div className={s.menu_left}>
-            <img src='../images/logo.png'  alt='' />
+            <img src={logo}  alt='' />
             <Link className={s.button} to={'/categories'}>Catalog</Link>
         </div>
         <div className={s.menu_rigth}>
            <div className={s.naw_links}>
               <NavLink className={isActive} to={'/'} >Main Page</NavLink>
-              <NavLink onClick={() => setBurger(!burger)} className={isActive} to={'/products/all'} >All Products</NavLink>
-              <NavLink onClick={() => setBurger(!burger)} className={isActive} to={'/sales'} >All sales</NavLink> 
+              <NavLink 
+                onClick={() => setBurger(!burger)} 
+                className={isActive} 
+                to={'/products/category/all'} 
+                state = "All products" >
+                  All Products
+              </NavLink>
+              <NavLink 
+                onClick={() => setBurger(!burger)} 
+                className={isActive} 
+                to={'/products/category/sales'}
+                state='Products with sale' >
+                  All sales
+              </NavLink> 
            </div>
             <Link to={'/basket'} >
-              <img src='../images/basket_logo.svg'  alt=''/>
+              <img src={basket}  alt=''/>
             </Link> 
         </div>
 

@@ -1,16 +1,15 @@
 import React from 'react'
 import s from './style.module.css'
 
-export default function BannerLayout({link, size}) {
+export default function BannerLayout({bannerImg, children}) {
+
   return (
-    <div style={
-        {
-            background: `url(${link}) 0 0/ contain no-repeat`,
-            aspectRatio: `${size}`
-        }
-    } 
-        className={s.banner}>
-        
+    <div className={s.banner}>
+        <img className={s.img} src={bannerImg} alt="" />
+        <div className={s.content}>
+          {children}
+        </div>
+       
     </div>
   )
 }

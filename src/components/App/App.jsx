@@ -5,6 +5,7 @@ import BasketPage from "../../pages/BasketPage/BasketPage";
 import CategoriesPage from "../../pages/CategoriesPage/CategoriesPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
+import ProductSinglePage from "../../pages/ProductSinglePage/ProductSinglePage";
 import ProductsPage from "../../pages/ProductsPage/ProductsPage";
 import { fetchCategories } from "../../store/slice/sliceCategories";
 import { fetchProducts } from "../../store/slice/sliceProducts";
@@ -25,9 +26,8 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage/>} />
           <Route path='/categories' element={<CategoriesPage/>} />
-          <Route path='/products/all' element={<ProductsPage/>} />
-          <Route path='/products/:id' element={<ProductsPage/>} />
-          <Route path='/sales' element={<ProductsPage/>} />
+          <Route path='/products/category/:id' element={<ProductsPage/>} />
+          <Route path='/product/:id' element={<ProductSinglePage/>} />
           <Route path='/basket' element={<BasketPage/>} />
           <Route path='/*' element={<NotFoundPage/>} /> 
         </Routes>

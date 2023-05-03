@@ -1,0 +1,10 @@
+.products{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(318px, 1fr));
+    gap: 30px;
+    justify-content: space-between;
+}
+.category{
+    font-weight: 700;
+    font-size: 40px;
+}
