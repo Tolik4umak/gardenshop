@@ -1,13 +1,15 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import ConteinerLayout from '../../layouts/ConteinerLayout/ConteinerLayout'
 import s from './style.module.css'
+import { basketAddNewItem } from '../../store/slice/sliceBasket'
 
 
 export default function ProductSinglePage() {
 
   const {id} = useParams() 
+  const dispatch = useDispatch()
   const {product, status, error} = useSelector(state => {
     const {list, ...rest} = state.products
     return{
@@ -56,7 +58,12 @@ export default function ProductSinglePage() {
                                 <div className={s.full_price}>{price}$</div>
                                 <div className={s.discont}>{((price - discont_price) / price * 100).toFixed(1)}%</div>
                             </div>
-                            <button className={s.basket_button}> To card</button>
+                            <button 
+                                className={s.basket_button}
+                                onClick={() => dispatch(basketAddNewItem(id))}
+                            > 
+                                To card
+                            </button>
                             <div className={s.description}>
                                 <h3 className={s.description_head}>Description</h3>
                                 <div className={s.description_text}>{description}</div>

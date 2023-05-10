@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# TELRA MAIN PROJECT
+
+Backeng avaliable [here](https://github.com/HaykInanc/telran_project_backend/tree/0bfc2ee51f1ffcf67c3381e77d8ef45618bbd12c).
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

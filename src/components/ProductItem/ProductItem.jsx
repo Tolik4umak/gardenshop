@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import s from './style.module.css'
+import { useDispatch } from 'react-redux'
+import { basketAddNewItem } from '../../store/slice/sliceBasket'
 
 export default function ProductItem({
     id,
@@ -12,10 +14,12 @@ export default function ProductItem({
     price,
     title,
     updatedAt,
-}) {
+}){
 
+  const dispatch = useDispatch()
   const onClick = (e) => {
     e.preventDefault()
+    dispatch(basketAddNewItem(id))
   }  
   
 
@@ -30,9 +34,7 @@ export default function ProductItem({
             <div className={s.full_price}>{price}$</div>
             <div className={s.discont}>{((price - discont_price) / price * 100).toFixed(1)}%</div>
         </div>
-        <div className={s.title}>{title}</div>
-
-        
+        <div className={s.title}>{title}</div> 
     </Link>
   )
   

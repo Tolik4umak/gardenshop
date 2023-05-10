@@ -5,6 +5,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import ProductItem from '../../components/ProductItem/ProductItem';
 import ConteinerLayout from '../../layouts/ConteinerLayout/ConteinerLayout'
 import s from './style.module.css'
+import FilterBar from '../../components/FilterBar/FilterBar';
 
 export default function ProductsPage() {
 
@@ -31,11 +32,15 @@ export default function ProductsPage() {
     }
   })
 
+  // console.log(list);
+
 
   return (
     <ConteinerLayout>
 
       <h2 className={s.category}>{curCategory.state}</h2>
+
+      <FilterBar checkboxShow={id === 'sales' ? false : true}/>
       {
         status === 'rejected'
         ? (
@@ -45,7 +50,11 @@ export default function ProductsPage() {
         ): status ===  'resolve' 
         ? (
           <div className={s.products}> 
-              {list.map(item => <ProductItem key={item.id} {...item}/>)}
+              {
+              list
+                .filter(({show}) => show.price && show.discont)
+                .map(item => <ProductItem key={item.id} {...item}/>)
+              }
           </div>
         )
         : (

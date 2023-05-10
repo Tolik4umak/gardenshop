@@ -9,6 +9,7 @@ import flowers from '../../images/flowers.png'
 import gnome from '../../images/gnome.png'
 import s from './style.module.css'
 import SaleProductsRandom from '../../components/SaleProductsRandom/SaleProductsRandom';
+import FormSale from '../../components/FormSale/FormSale';
 
 export default function HomePage() {
 
@@ -33,7 +34,7 @@ export default function HomePage() {
         <BannerLayout bannerImg={discontBannerImg}>
           <div className={s.discont_banner}>
             <img src={gnome} className={s.banner_img_1} alt="" />
-            <h1 className="">здесь будет модуль с формой</h1>
+            <FormSale/>
           </div>
         </BannerLayout>
 
