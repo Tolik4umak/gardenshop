@@ -1,0 +1,21 @@
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 60px;
+    margin: 15px 0;
+}
+.basket_Container{
+    border-bottom: 1px solid gray;
+}
+
+
+.link{
+    text-align: right;
+    display: block;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    height: 50px;
+}

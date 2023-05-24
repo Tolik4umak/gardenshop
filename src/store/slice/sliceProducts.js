@@ -47,15 +47,17 @@ const productsSlice = createSlice({
     },
     reducers: {
         searchFilterByPrice: (state, {payload}) => {
-            const {minFilterPrice, maxFilterPrice} = payload
+            const {min, max} = payload
             state.list.map(item => {
                 const finalPrice = item.discont_price || item.price
-                if(minFilterPrice <= finalPrice && maxFilterPrice >= finalPrice){
+                if(min <= finalPrice && finalPrice <= max){
                     item.show.price = true
                 }else{
                     item.show.price = false
                 }
             })
+
+            console.log(payload)
         },
         searchFilterByDiscount: (state, {payload}) => {
             state.list.map(item => {

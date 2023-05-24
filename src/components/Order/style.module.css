@@ -1,0 +1,31 @@
+.order{
+    width: 496px;
+    height: 393px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin-top: 50px;
+    padding: 25px;
+}
+.title{
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: 0.03em;
+    margin-bottom: 40px;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    align-items: center;
+}
+.param{
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 0.03em;
+}
+.price{
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: 0.03em;
+}

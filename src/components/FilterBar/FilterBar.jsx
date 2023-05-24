@@ -6,29 +6,27 @@ import { resetProductsFilters, searchFilterByDiscount, searchFilterByPrice, sort
 export default function FilterBar({checkboxShow}) {
   
   const dispatch = useDispatch()  
-  const maxPrice = useSelector(({products}) => products.list.reduce((acc, {price}) => acc < price ? price : acc,0))
-  const [minFilterPrice, setMinFilterPrice] = useState(0)  
-  const [maxFilterPrice, setMaxFilterPrice] = useState(0)  
+
+  const [price, setPrice] = useState({min: 0, max: Infinity})  
+
+  useEffect(() => {
+    dispatch(searchFilterByPrice(price))
+  }, [price])
+
 
   useEffect(() => {
     dispatch(resetProductsFilters())
   }, [])
 
-  const onChamgeMinPrice = (e) =>{
-    setMinFilterPrice(e.target.value)
-    dispatch(searchFilterByPrice({
-      minFilterPrice: +e.target.value || 0,
-      maxFilterPrice: +maxFilterPrice || maxPrice,
-    }))
+
+  const minHandler = ({target}) => {
+    setPrice({...price, min: +target.value})
   }
-    
-  const onChamgeMaxPrice = (e) =>{
-    setMaxFilterPrice(e.target.value)
-    dispatch(searchFilterByPrice({
-      minFilterPrice: +minFilterPrice || 0,
-      maxFilterPrice: +e.target.value || maxPrice,
-    }))
+  const maxHandler = ({target}) => {
+    setPrice({...price, max: +target.value || Infinity})
   }
+
+
     
   const sortOnChange = (e) => {
     dispatch(sortFilterProducts(e.target.value))
@@ -40,7 +38,8 @@ export default function FilterBar({checkboxShow}) {
         <div className={s.sort}>
             <label className={s.title}>Price</label>
             <input 
-                onChange={onChamgeMinPrice} 
+                onChange={minHandler}
+                value={price.min === 0 ? '' : price.min}
                 className={s.price} 
                 name='minPrice' 
                 type="number" 
@@ -48,7 +47,8 @@ export default function FilterBar({checkboxShow}) {
                 min="0" 
                 placeholder='from' />
             <input 
-                onChange={onChamgeMaxPrice} 
+                onChange={maxHandler}
+                value={price.max === 0  ? '' : price.max}
                 className={s.price} 
                 name='maxPrice' 
                 type="number" 

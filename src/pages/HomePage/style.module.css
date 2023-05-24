@@ -42,15 +42,9 @@
     border-radius: 13px;
 }
 
-.discont_banner{
-    width: 100%;
-    height: 100%;
-    padding: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-.discont_banner .banner_img_1{
-    align-self: center;
-    margin-left: 60px;
-}
+
+
+
+
+
+

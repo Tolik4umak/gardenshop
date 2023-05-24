@@ -41,6 +41,19 @@
 .container .active{
     color: #339933;
 }
+.basket{
+    position: relative;
+}
+.basket::after{
+    content: attr(data-count);
+    display: block;
+    font-size: 18px;
+    color: #339933;
+    font-weight: 500;
+    position: absolute;
+    top: -15px;
+    left: 25px;
+}
 
 
 @media (max-width: 768px) {
@@ -89,7 +102,7 @@
         transform: translate(40px);
         background: #000;
         transition: .3s;
-     }
+    }
 
 
 }
