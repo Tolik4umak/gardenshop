@@ -63,3 +63,9 @@
 .hide .discont{
     display: none;
 }
+
+@media (max-width: 768px){
+    .to_basket{
+        display: block;
+    }
+}

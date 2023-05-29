@@ -30,7 +30,7 @@ export default function Nav() {
   },[])
 
   return (
-    <div ref={burger} className={s.container}>    
+    <nav ref={burger} className={s.container}>    
 
         <div className={s.menu_left}>
             <Link onClick={burgerHandler} to={'/'}><img src={logo}  alt='' /></Link>
@@ -80,6 +80,6 @@ export default function Nav() {
           <FontAwesomeIcon onClick={burgerHandler} className={s.burger_bar} icon={faBars} />
           <FontAwesomeIcon onClick={burgerHandler} className={s.burger_xmark} icon={faXmark} />
     
-    </div>
+    </nav>
   ) 
 }

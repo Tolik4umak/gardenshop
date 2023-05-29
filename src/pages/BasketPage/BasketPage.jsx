@@ -31,9 +31,9 @@ export default function BasketPage() {
            }
          </div>
 
-        <div className={s.order}>
+        <aside className={s.order}>
           <Order orderPrice={orderPrice.toFixed(2)} orderList={orderList}/>
-        </div>
+        </aside>
 
       
       </main>

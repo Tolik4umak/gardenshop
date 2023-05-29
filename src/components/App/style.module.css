@@ -11,6 +11,18 @@
     --toastify-color-progress-success: #339933;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: darkgrey;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #444444;
+  border-radius: 100px;
+}
+
+
+
+
 html,
 body{
   width: 100%;

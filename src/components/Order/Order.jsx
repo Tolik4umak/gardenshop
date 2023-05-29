@@ -32,7 +32,7 @@ export default function Order({orderPrice, orderList}) {
   }
 
   return (
-    <aside className={s.order}>
+    <div className={s.order}>
 
         <h2 className={s.title}>Order details</h2>
 
@@ -69,6 +69,6 @@ export default function Order({orderPrice, orderList}) {
             theme='dark'
         />
 
-    </aside>
+    </div>
   )
 }
