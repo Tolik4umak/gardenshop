@@ -1,5 +1,4 @@
 .order{
-    width: 496px;
     height: 393px;
     border: 2px solid black;
     border-radius: 15px;
@@ -29,3 +28,4 @@
     font-size: 32px;
     letter-spacing: 0.03em;
 }
+

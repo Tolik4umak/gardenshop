@@ -4,6 +4,11 @@ import s from './style.module.css'
 import logo from '../../images/logo.png'
 import basket from '../../images/basket_logo.svg'
 import { useSelector } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import ButtonCust from '../../layouts/ButtonCust/ButtonCust'
+
 
 export default function Nav() {
 
@@ -13,6 +18,11 @@ export default function Nav() {
 
   const burgerHandler = () => {
     burger.current.classList.toggle(s.burger_menu)
+    if(burger.current.classList.contains(s.burger_menu) && document.body.clientWidth <= 768){
+      document.body.style.overflow = 'visible'
+    }else if(document.body.clientWidth <= 768){
+      document.body.style.overflow = 'hidden'
+    }
   }
 
   useEffect(() => {
@@ -23,8 +33,15 @@ export default function Nav() {
     <div ref={burger} className={s.container}>    
 
         <div className={s.menu_left}>
-            <Link to={'/'}><img src={logo}  alt='' /></Link>
-            <Link className={s.button} to={'/categories'}>Catalog</Link>
+            <Link onClick={burgerHandler} to={'/'}><img src={logo}  alt='' /></Link>
+            <ButtonCust
+              w={125}
+              h={50}
+              fz={16}
+              borderRadius={5}
+            >
+              <Link onClick={burgerHandler} to={'/categories'}>Catalog</Link>
+            </ButtonCust>
         </div>
         <div className={s.menu_rigth}>
            <div className={s.naw_links}>
@@ -60,9 +77,9 @@ export default function Nav() {
             </Link> 
         </div>
 
-        <div onClick={burgerHandler} className={s.burger}>X</div>
-
-
+          <FontAwesomeIcon onClick={burgerHandler} className={s.burger_bar} icon={faBars} />
+          <FontAwesomeIcon onClick={burgerHandler} className={s.burger_xmark} icon={faXmark} />
+    
     </div>
   ) 
 }

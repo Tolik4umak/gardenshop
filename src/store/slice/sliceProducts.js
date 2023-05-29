@@ -44,6 +44,7 @@ const productsSlice = createSlice({
         list: [],
         status: null,
         error: null,
+        telStatus: false
     },
     reducers: {
         searchFilterByPrice: (state, {payload}) => {
@@ -75,9 +76,8 @@ const productsSlice = createSlice({
             if(payload === 'priceDescending'){
                 state.list.sort((a , b) => getFinalPrice(b) - getFinalPrice(a) )
             }
-            if(payload === 'date'){   
-                // state.list.sort((a , b) => new Date(a.updatedAt) - new Date(b.updatedAt) )
-                state.list.sort((a , b) => a.categoryId - b.categoryId )
+            if(payload === 'name'){   
+                state.list.sort((a , b) => a.title < b.title ? -1 : 1)
             }
         },
         resetProductsFilters: (state) => {
@@ -86,6 +86,13 @@ const productsSlice = createSlice({
                 b.show = {price: true, discont: true}
                 return a.id - b.id
             })
+        },
+        applyDiscount: (state) => {
+            state.list = state.list.map(({discont_price, ...item}) => ({
+                ...item,
+                discont_price: discont_price ? discont_price : +(item.price * 95 / 100).toFixed(2)
+            }))
+            state.telStatus = true
         }
         
 
@@ -108,5 +115,5 @@ const productsSlice = createSlice({
 
 
 
-export const {searchFilterByPrice, searchFilterByDiscount, sortFilterProducts, resetProductsFilters} = productsSlice.actions 
+export const {searchFilterByPrice, searchFilterByDiscount, sortFilterProducts, resetProductsFilters, applyDiscount} = productsSlice.actions 
 export default productsSlice.reducer

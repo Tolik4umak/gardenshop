@@ -1,0 +1,32 @@
+.btn{
+    color: #FFFFFF;
+    background: #339933;
+    border-radius: 10px;
+    transition: .1s;
+    font-weight: 700;
+    padding-inline: 10px;
+    width: 100%;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+.btn_press:active{
+    transform: scale(.95);
+    transition: .1s;
+    outline: none;
+}
+.btn_press:hover{
+    outline: none;
+}
+.btn a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.btn * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}

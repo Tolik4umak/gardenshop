@@ -76,7 +76,7 @@ export default function FilterBar({checkboxShow}) {
                 <option value="default" disabled>Default</option>
                 <option value="priceAscending">Price Ascending</option>
                 <option value="priceDescending">Price Descending</option>
-                <option value="date">Date</option>
+                <option value="name">Name</option>
             </select>
         </div>
 

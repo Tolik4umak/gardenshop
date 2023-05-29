@@ -12,8 +12,7 @@ export default function ProductsPage() {
 
   const {id} = useParams()
   const curCategory = useLocation()
-  // const category = id === 'all' ? 'All products' : id === 'sales' ? 'Products with sale' : state
-
+ 
   const {list , status, error}  = useSelector(state => {
     if(id === 'all'){
       return state.products

@@ -30,6 +30,7 @@ function App() {
           <Route path='/product/:id' element={<ProductSinglePage/>} />
           <Route path='/basket' element={<BasketPage/>} />
           <Route path='/*' element={<NotFoundPage/>} /> 
+          <Route path='/notfound' element={<NotFoundPage/>} /> 
         </Routes>
     </div>
   );

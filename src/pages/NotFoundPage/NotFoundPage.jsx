@@ -1,13 +1,12 @@
 import React from 'react'
-import BannerLayout from '../../layouts/BannerLayout/BannerLayout'
 import ConteinerLayout from '../../layouts/ConteinerLayout/ConteinerLayout'
-import bannerImg from '../../images/NotFoundBanner.png'
+import Banner404 from '../../components/Banner404/Banner404'
 
 
 export default function NotFoundPage() {
   return (
     <ConteinerLayout>
-        <BannerLayout bannerImg={bannerImg} aspectRatio={'1440/625 '}/>
+        <Banner404/>
     </ConteinerLayout>
   )
 }

@@ -17,16 +17,7 @@
     height: 76px;
     line-height: 0;    
 }
-.btn{
-    font-weight: 700;
-    transition: transform;
-    transition-duration: .3s;
-}
-.btn:active{
-    transform: scale(0.95);
-    transition: transform;
-    transition-duration: .01s;
-}
+
 .err_label{
     max-width: 100%;
     position: absolute;

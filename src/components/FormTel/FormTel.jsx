@@ -1,5 +1,6 @@
 import s from './style.module.css'
 import { useForm } from 'react-hook-form'
+import ButtonCust from '../../layouts/ButtonCust/ButtonCust'
  
 export default function FormTel({button, sendForm, btnStyle, inputStyle}) {
 
@@ -34,7 +35,12 @@ export default function FormTel({button, sendForm, btnStyle, inputStyle}) {
         {errors.tel ? (<div className={s.err_label}>{errors.tel.message}</div>): ''}
 
       </div>
-      <input className={s.btn} type='submit' value = {button} style={btnStyle}/>
+      {/* <input className={s.btn} type='submit' value = {button} style={{display: 'none'}}/> */}
+      <ButtonCust
+          custStyle={btnStyle}
+      >
+          {button}
+      </ButtonCust>
     </form>
   )
 }

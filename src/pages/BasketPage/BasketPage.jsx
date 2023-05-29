@@ -14,10 +14,8 @@ export default function BasketPage() {
       return{...target, ...item }
     })
   })
-
+  const orderList = basket.map( ({id, count}) => ({id,count}) )
   const orderPrice = basket.reduce((acc, {price, count, discont_price}) => acc + (discont_price || price)*count , 0)
-
-  console.log(basket);
 
   return (
     <ConteinerLayout>
@@ -26,14 +24,17 @@ export default function BasketPage() {
     
       <main className={s.container}>
 
-         <div className={s.basket_Container}>
+         <div className={s.basket_container}>
           <Link className={s.link} to='/'> Back to store 	&#62; </Link>
            {
             basket.map(item => <BasketItem key={item.id} {...item} />)
            }
          </div>
 
-         <Order orderPrice={orderPrice} orderList={basket.map( ({id, count}) => ({id,count}) )}/>
+        <div className={s.order}>
+          <Order orderPrice={orderPrice.toFixed(2)} orderList={orderList}/>
+        </div>
+
       
       </main>
   

@@ -21,23 +21,26 @@ export default function BasketItem({
   return (
     <div className={s.container}>
         <img className={s.img} src={image} alt={title} />
-        <div className={s.descr}>
-            <h3 className={s.title}>{title}</h3>
-            <div className={s.count_bar}>
-                <button onClick={() => dispatch(basketDecrement(id))}>-</button>
-                <div className={s.count} >{count}</div>
-                <button onClick={() => dispatch(basketIncrement(id))} >+</button>
-            </div>
+
+        <h3 className={s.title}>{title}</h3>
+        <div className={s.count_bar}>
+            <button onClick={() => dispatch(basketDecrement(id))}>-</button>
+            <div className={s.count} >{count}</div>
+            <button onClick={() => dispatch(basketIncrement(id))} >+</button>
         </div>
+
         <div className={s.price}>
-          <div className={s.cur_price}>{ discont_price? discont_price : price}$</div>
-          <div className={discont_price ?  s.old_price : s.hidden}>{price}$</div>
-        </div>
+           <div className={s.cur_price}>{ discont_price? discont_price : price}$</div>
+           <div className={discont_price ?  s.old_price : s.hidden}>{price}$</div>
+         </div>
+
         <FontAwesomeIcon 
           onClick={() => dispatch(basketRemove(id))}
           className={s.remove_icon}
           icon={faXmark} 
         />
     </div>
+
+    
   )
 }

@@ -7,6 +7,10 @@
   font-family: 'Montserrat', sans-serif;
   
 }
+:root {
+    --toastify-color-progress-success: #339933;
+}
+
 html,
 body{
   width: 100%;

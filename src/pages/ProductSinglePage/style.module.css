@@ -3,6 +3,7 @@
     grid-template-columns: 2fr 1fr;
     gap: 30px;
 }
+
 .title{
     font-weight: 600;
     font-size: 36px;
@@ -42,23 +43,6 @@
     display: none;
 }
 
-
-.basket_button{
-    margin: 40px 0;
-    font-weight: 700;
-    font-size: 28px;
-    color: #FFFFFF;
-    width: 340px;
-    height: 85px;
-    background: #339933;
-    border: 2px solid #339933;
-    border-radius: 10px;
-}
-.basket_button:hover{
-    color: #339933; 
-    background: #fff;
-}
-
 .description{
     border-top: 1px dashed #C0C0C0;
 }
@@ -70,4 +54,22 @@
 .description_text{
     font-weight: 500;
     font-size: 20px;
+}
+
+
+
+@media (max-width: 960px){
+    .container{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px){
+    .container{
+        grid-template-columns: 1fr;
+    }
+    .img{
+        margin-inline: -30px;
+        width: calc(100% + 60px);
+    }
 }
