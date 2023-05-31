@@ -51,9 +51,9 @@ export default function Footer() {
       <iframe 
         className={s.googlemaps}
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.4090427798847!2d13.372469777315375!3d52.5079361371218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8515353a68755%3A0xd0866511db4f838f!2sTel-Ran.de%20GmbH!5e0!3m2!1sru!2sde!4v1685384241573!5m2!1sru!2sde" 
-        allowfullscreen={true}
+        allowFullScreen={true}
         loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade"
+        referrerPolicy="no-referrer-when-downgrade"
       >   
       </iframe>
     </footer>

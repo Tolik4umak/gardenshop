@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import s from './style.module.css'
+import useResize from '../../hooks/useResize'
 
 export default function ButtonCust(props) {
 
@@ -20,7 +21,8 @@ export default function ButtonCust(props) {
     borderRadius, 
   } = props
 
-  const [screen, setScreen] = useState(window.innerWidth);
+  const button = useRef()  
+  const screen =useResize()
 
   const getValue = (val) => {
     const sm = Boolean(screen <= 768) && (val?.sm || val) 
@@ -28,16 +30,6 @@ export default function ButtonCust(props) {
     const lg = Boolean(screen > 960) && (val?.lg || val?.md || val?.sm || val) 
     return sm || md || lg
   }
-
-  useEffect(() => {
-      const handleResize = (event) => {
-        setScreen(event.target.innerWidth);
-      };
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-  }, []);
 
   useEffect(() => {
     if(action === undefined || action){
@@ -84,7 +76,6 @@ export default function ButtonCust(props) {
 
   }, [props])  
 
-  const button = useRef()  
 
   const mouseOverHandl = () => {
     button.current.style.background =  custStyle?.color || color || '#fff'
