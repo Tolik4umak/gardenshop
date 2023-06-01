@@ -3,14 +3,30 @@
     grid-template-columns: 1fr;
     text-decoration: none;
     justify-items: center;
+    box-shadow: rgba(80, 80, 80, 0.25) 0px 6px 12px -2px, 
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transition: .3s;    
 
 }
+.category:hover{
+    box-shadow: rgba(0, 0, 0, 0.363) 0px 13px 27px -5px, 
+    rgba(0, 0, 0, 0.425) 0px 8px 16px -8px;
+    transition: .3s;    
 
+}
 .img{
     width: 100%;
     height: 350px;
     object-fit: cover;
+    filter:brightness(.7) grayscale(0.2);
+    transition: .3s;    
 }
+
+.img:hover{
+    filter: none;
+    transition: .3s;
+}
+
 .title{
     height: 66px;
     line-height: 130%;

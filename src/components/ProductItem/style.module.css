@@ -1,6 +1,13 @@
 .container{
     text-decoration: none;
     color: inherit;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(80, 80, 80, 0.25) 0px 6px 12px -2px, 
+                rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+    display: grid;
+    position: relative;
 }
 .img_wrapper{
     position: relative;
@@ -22,21 +29,15 @@
     cursor: pointer;
     transition: .1s;
 }
-.container:hover .to_basket{
-    display: block;
-    z-index: 999;
-}
-.to_basket:hover{
-    border: 2px solid #daf5da;
-    background-color: #339933;
-    color: #f1fff1;
-    transition: .1s;
-}
-.to_basket:active{
-    transform: scale(.95);
+.container:hover{
+    box-shadow: rgba(0, 0, 0, 0.363) 0px 13px 27px -5px, 
+                rgba(0, 0, 0, 0.425) 0px 8px 16px -8px;
+    transition: .2s;
+
 }
 .img{
     width: 100%;
+    height: 100%;
     aspect-ratio: 1;
     object-fit: cover;
 }
@@ -45,6 +46,7 @@
     justify-content: space-between;
     padding: 10px 0;
     align-items: baseline;
+    margin-bottom: 1px;
 }
 .final_price{
     font-size: 30px;
@@ -64,8 +66,25 @@
     display: none;
 }
 
-@media (max-width: 768px){
-    .to_basket{
-        display: block;
-    }
+.title{
+    padding-right: 50px;
 }
+
+.basket_icon{
+    font-size: 30px;
+    color: #7a7a7a;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.basket_icon:hover{
+    cursor: pointer;
+    filter: brightness(.8);
+}
+.basket_active{
+    color: #339933;
+}
+
+
+

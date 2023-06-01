@@ -1,4 +1,4 @@
-        import React from 'react'
+import React from 'react'
 import s from './style.module.css'
 import FormTel from '../FormTel/FormTel'
 import axios from 'axios'
@@ -13,9 +13,10 @@ export default function Order({orderPrice, orderList}) {
 
       
   const handleForm = (data) => {
-   
-    if(orderPrice !== 0){
-        axios.post('http://localhost:3333/order/send')
+
+    const dataPost = {...data, orderList, orderPrice}
+    if(orderList ===  []){
+        axios.post('http://localhost:3333/order/send',dataPost)
             .then(res => {
                 dispatch(basketClear())
                 toast.success("The order submission request has been successfully received", {icon: false})
@@ -61,11 +62,6 @@ export default function Order({orderPrice, orderList}) {
        <ToastContainer
             position="top-center"
             autoClose={5000}
-            limit={1}
-            closeOnClick
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
             theme='dark'
         />
 

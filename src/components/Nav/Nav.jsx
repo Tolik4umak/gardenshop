@@ -64,15 +64,15 @@ export default function Nav() {
               <NavLink 
                 onClick={burgerHandler} 
                 className={isActive} 
-                to={'/products/category/all'} 
-                state = "All products" >
+                to={'/products/allcategorys/all'} 
+              >
                   All Products
               </NavLink>
               <NavLink 
                 onClick={burgerHandler} 
                 className={isActive} 
-                to={'/products/category/sales'}
-                state='Products with sale' >
+                to={'/products/allcategorys/sales'}
+              >
                   All sales
               </NavLink> 
            </div>

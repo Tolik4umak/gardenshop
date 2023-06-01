@@ -12,28 +12,27 @@
     gap: 15px;
 }
 
+.field{
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+    font-size: 18px;
+}
 .title{
     font-weight: 600;   
     font-size: 20px;
     align-self: center;
 }
-
 .price{
     width: 105px;
-    padding: 10px;
-    outline: none;
-    border-radius: 10px;
 }
-
 .select{
-    padding: 10px;
-    border-radius: 10px;
-    outline: none;
     background: #ffffff;
     width: 200px;
-    margin-left: 25px;
 }
-
+.select *:checked{
+    color: black;
+}
 .discount{
     display: none;
 }
@@ -48,9 +47,9 @@
 .icon{
     display: none;
     color: #339933;
-    font-size: 42px;
+    font-size: 50px;
     position: absolute;
-    top: 0;
+    top: -5px;
     left: 0;
 }
 .discount:checked + .checkbox_label .icon{
@@ -68,30 +67,82 @@
     color: #ACACAC;
 }
 
-
-/* .discount:checked + label::before{
-    content: ' ';
-    width: 10px;
-    height: 25px;
-    background-color: #339933;
-    display: block;
-    position: absolute;
-    border: 3px solid white;
-    transform: rotate(-45deg);
-    border-bottom: none;
-    z-index: 1;
-    left: -3.7px;
-    top: 6.4px;
+.filters_mobile, .close_button{
+    display: none;
 }
-.discount:checked + label::after{
-    content: ' ';
-    width: 10px;
-    height: 45px;
-    background-color: #339933;
-    display: block;
-    position: absolute;
-    border: 3px solid white;
-    transform: rotate(45deg);
-    left: 22px;
-    top: -4px;
-} */
+
+
+@media (max-width: 768px){
+    .close_button{
+        display: block;
+    }
+    .filters_mobile{
+        display: grid;
+        gap: 15px;
+        margin: 30px 0;
+    }
+    .filter_icon{
+        justify-self: end;
+        font-size: 35px;
+        color: #232323;
+    }
+    .filter_option{
+        justify-self: start;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 3px 5px;
+        border-radius: 10px;
+        background-color: #339933;
+        color: white;
+        font-size: 20px;
+    }
+
+    .wrapper_container{
+        display: none;
+        background-color: rgba(0, 0, 0, 0.507);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+    }
+    .container{
+        margin-top: 100px;
+        padding: 50px 30px;
+        border-radius: 15px;
+        background-color: white;
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        grid-template-columns: repeat(auto-fit, 90%);
+    }
+    .mobile_modal{
+        display: block;
+    }
+
+
+    .close_button{
+        width: 35px;
+        height: 35px;
+        font-size: 35px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .price, .select{
+        width: 100%;
+    }
+
+    .checkbox_label{
+        justify-self: end;
+    }
+    .select option{
+        font-size: 18px;
+    }
+}
+
+
+

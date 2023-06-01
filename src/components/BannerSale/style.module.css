@@ -5,11 +5,12 @@
     position: relative;
     display: grid;
     align-items: center;
+    background-color: #f1f5f4;
 }
 
 .content{
     z-index: 1;
-    color: #fff;
+    color: #232323;
     font-weight: 700;
 }
 .title{
@@ -19,13 +20,21 @@
     font-size: 63px;
     margin-bottom: 60px;
 }
-
 .flowers{
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 80px;
+    bottom: -40px;
     z-index: 0;
+    height: 650px;
+    opacity: 90%;
 }
+
+@media(max-width: 768px){
+    .flowers{
+        opacity: 35%;
+    }
+}
+
 
 
 

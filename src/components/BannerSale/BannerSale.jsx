@@ -1,6 +1,6 @@
 import s from './style.module.css'
 import backgroundImg  from '../../images/SaleBanner.png'
-import flowers from '../../images/flowers.png'
+import flowers from '../../images/flowers3.png'
 import ButtonCust from '../../layouts/ButtonCust/ButtonCust'
 import { Link } from 'react-router-dom'
 
@@ -12,7 +12,7 @@ export default function BannerSale() {
   return (
     <div 
         className={s.container}
-        style={{background: `url(${backgroundImg})`}}
+        // style={{background: `url(${backgroundImg})`}}
     >
 
         <div className={s.content}>
@@ -22,8 +22,8 @@ export default function BannerSale() {
                w={155}
                h={82}
                fz={25}  
-               background={'#fff'}
-               color={'#000'}          
+               background={'#232323'}
+               color={'#fff'}          
             >
                 <Link to={'/products/category/sales'}>Sale</Link>
             </ButtonCust>

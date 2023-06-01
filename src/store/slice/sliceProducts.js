@@ -19,6 +19,7 @@ export const fetchProducts = createAsyncThunk(
                     show: {
                         price: true,
                         discont: true,
+                        keyWords: true
                     }
                 }
             ))
@@ -44,9 +45,18 @@ const productsSlice = createSlice({
         list: [],
         status: null,
         error: null,
-        telStatus: false
+        telStatus: false,
     },
     reducers: {
+        searchFilterByKeyWords: (state, {payload}) => {
+            state.list.map(item => {
+                if(item.title.toLowerCase().startsWith(payload.toLowerCase())){
+                    item.show.keyWords = true
+                }else{
+                    item.show.keyWords = false
+                }
+            })
+        },
         searchFilterByPrice: (state, {payload}) => {
             const {min, max} = payload
             state.list.map(item => {
@@ -57,8 +67,6 @@ const productsSlice = createSlice({
                     item.show.price = false
                 }
             })
-
-            console.log(payload)
         },
         searchFilterByDiscount: (state, {payload}) => {
             state.list.map(item => {
@@ -82,8 +90,8 @@ const productsSlice = createSlice({
         },
         resetProductsFilters: (state) => {
             state.list.sort((a,b) => {
-                a.show = {price: true, discont: true}
-                b.show = {price: true, discont: true}
+                a.show = {price: true, discont: true, keyWords: true }
+                b.show = {price: true, discont: true, keyWords: true}
                 return a.id - b.id
             })
         },
@@ -115,5 +123,13 @@ const productsSlice = createSlice({
 
 
 
-export const {searchFilterByPrice, searchFilterByDiscount, sortFilterProducts, resetProductsFilters, applyDiscount} = productsSlice.actions 
+export const {
+    searchFilterByPrice, 
+    searchFilterByDiscount, 
+    sortFilterProducts, 
+    resetProductsFilters, 
+    applyDiscount,
+    searchFilterByKeyWords
+
+} = productsSlice.actions 
 export default productsSlice.reducer

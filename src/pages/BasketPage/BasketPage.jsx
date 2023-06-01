@@ -11,7 +11,7 @@ export default function BasketPage() {
   const basket = useSelector(({basket, products}) => {
     return basket.list.map(item => {
       const target = products.list.find(({id}) => id === item.id)
-      return{...target, ...item }
+      return {...target, ...item }
     })
   })
   const orderList = basket.map( ({id, count}) => ({id,count}) )
@@ -20,23 +20,33 @@ export default function BasketPage() {
   return (
     <ConteinerLayout>
 
-      <h2>Shopping Cart</h2>
     
-      <main className={s.container}>
+      {
+        basket.length 
+        ? (
+          <>
+            <h2>Shopping Cart</h2>
 
-         <div className={s.basket_container}>
-          <Link className={s.link} to='/'> Back to store 	&#62; </Link>
-           {
-            basket.map(item => <BasketItem key={item.id} {...item} />)
-           }
-         </div>
-
-        <aside className={s.order}>
-          <Order orderPrice={orderPrice.toFixed(2)} orderList={orderList}/>
-        </aside>
-
-      
-      </main>
+            <main className={s.container}>
+            <div className={s.basket_container}>
+              <Link className={s.link} to='/'> Back to store 	&#62; </Link>
+              {
+                basket.map(item => <BasketItem key={item.id} {...item} />)
+              }
+            </div>
+  
+            <aside className={s.order}>
+              <Order orderPrice={+orderPrice.toFixed(2)} orderList={orderList}/>
+            </aside>      
+          </main>
+          </>
+        ) :
+        (
+          <h2>
+            your cart is currently empty
+          </h2>
+        )
+      }
   
     </ConteinerLayout>
   )

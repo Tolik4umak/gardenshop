@@ -5,6 +5,9 @@ import ConteinerLayout from '../../layouts/ConteinerLayout/ConteinerLayout'
 import s from './style.module.css'
 import { basketAddNewItem } from '../../store/slice/sliceBasket'
 import ButtonCust from '../../layouts/ButtonCust/ButtonCust'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 export default function ProductSinglePage() {
@@ -20,13 +23,19 @@ export default function ProductSinglePage() {
         product: list.find(item => +item.id === +id)
     }
   })
-
-
+  
   useEffect(() => {
     if(!product && status === 'resolve'){            
         navigate('/notfound')        
     }
   } ,[status])
+
+  const handleOnCLick = () => {
+    dispatch(basketAddNewItem(id))
+    toast.success("The item has been successfully add to basket", {icon: false})
+  }
+
+
 
   function render(){
 
@@ -62,7 +71,7 @@ export default function ProductSinglePage() {
                             <div className={s.discont}>{((price - discont_price) / price * 100).toFixed(1)}%</div>
                         </div>
                         <ButtonCust
-                           onClick={() => dispatch(basketAddNewItem(id))}
+                           onClick={handleOnCLick}
                            w={{sm: '100%', md: 340}}
                            h={85}
                            fz={28}
@@ -76,6 +85,11 @@ export default function ProductSinglePage() {
                         </div>
                     </div>
                 </div>
+                <ToastContainer
+                    position="top-center"
+                    autoClose={5000}
+                    theme='dark'
+                />
             </ConteinerLayout>
         )
 
