@@ -20,7 +20,7 @@ export default function ProductSinglePage() {
     const {list, ...rest} = state.products
     return{
         ...rest,
-        product: list.find(item => +item.id === +id)
+        product: list.find(item => item.id === +id)
     }
   })
   
@@ -31,7 +31,7 @@ export default function ProductSinglePage() {
   } ,[status])
 
   const handleOnCLick = () => {
-    dispatch(basketAddNewItem(id))
+    dispatch(basketAddNewItem(+id))
     toast.success("The item has been successfully add to basket", {icon: false})
   }
 

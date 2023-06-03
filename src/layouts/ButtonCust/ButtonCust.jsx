@@ -36,7 +36,7 @@ export default function ButtonCust(props) {
         button.current.classList.add(s.btn_press)
     }
 
-    button.current.style.border = `2px solid ${custStyle?.border || background || '#339933'}`
+    button.current.style.border = `2px solid ${custStyle?.border || border || background || '#339933'}`
    
     if(!custStyle?.margin)  button.current.style.margin = `${m}px`
     if(!custStyle?.marginTop ){

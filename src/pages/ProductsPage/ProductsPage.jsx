@@ -7,6 +7,8 @@ import s from './style.module.css'
 import FilterBar from '../../components/FilterBar/FilterBar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Pagination from '../../components/Pagination/Pagination';
+import ButtonCust from '../../layouts/ButtonCust/ButtonCust';
 
 
 export default function ProductsPage() {
@@ -33,8 +35,15 @@ export default function ProductsPage() {
     }
   })
 
-  // console.log(list);
-
+  const products = list.filter(({show}) => show.price && show.discont && show.keyWords)
+                    
+  const [productsPerPage, setProductsPerPage] = useState(12)
+  const [loader, setLoader] = useState(12)
+  const [currentPage, setCurrentPage] = useState(1) 
+  const endIndex = currentPage * productsPerPage
+  const startIndex = endIndex - loader
+  const arrPaginated = products.slice(startIndex, endIndex)
+  const totalPages = Math.ceil(products.length / productsPerPage)
 
   return (
     <ConteinerLayout>
@@ -42,6 +51,23 @@ export default function ProductsPage() {
       <h2 className={s.category}>{curCategory}</h2>
 
       <FilterBar checkboxShow={id !== 'sales'}/>
+{/* 
+      <button value={8} onClick={(e) => {
+        setCurrentPage(Math.floor(startIndex / +e.target.value)+1)
+        setProductsPerPage(+e.target.value)
+        setLoader(+e.target.value)
+      }} >8</button>
+      <button value={12} onClick={(e) => {
+        setCurrentPage(Math.floor(startIndex / +e.target.value)+1)
+        setProductsPerPage(+e.target.value)
+        setLoader(+e.target.value)
+      }} >12</button>
+       <button value={16} onClick={(e) => {
+        setCurrentPage(Math.floor(startIndex / +e.target.value)+1)
+        setProductsPerPage(+e.target.value)
+        setLoader(+e.target.value)
+      }} >16</button> */}
+
       {
         status === 'rejected'
         ? (
@@ -52,9 +78,7 @@ export default function ProductsPage() {
         ? (
           <div className={s.products}> 
               {
-              list
-                .filter(({show}) => show.price && show.discont && show.keyWords)
-                .map(item => <ProductItem key={item.id} {...item}/>)
+              arrPaginated.map(item => <ProductItem key={item.id} {...item}/>)
               }
           </div>
         )
@@ -64,6 +88,16 @@ export default function ProductsPage() {
           </div>
         )
       }
+
+      
+      <Pagination 
+        totalPages = {totalPages} 
+        currentPage={currentPage} 
+        setCurrentPage={setCurrentPage} 
+        loader={loader}
+        setLoader={setLoader} 
+        productsPerPage={productsPerPage}
+      />
 
       <ToastContainer
           toastClassName={s.custom_toast}

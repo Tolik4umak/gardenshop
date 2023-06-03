@@ -18,12 +18,10 @@
     right: 30px;
     font-size: 45px;
     color: #339933;
+    background-color: #ffffff;
     z-index: 777;
     transition: .5s;
     border-radius: 50%;
-    /* box-shadow: 
-    #33993379 0px 5px 15px,
-    #73ff00c7 0px 5px 30px; */
     animation: shadow 2s infinite ease-in-out;
 }
 .arrow_up:active{

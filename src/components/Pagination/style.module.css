@@ -1,0 +1,39 @@
+.container{
+    margin: 50px 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+}
+.page{
+    background-color: #ccc;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.arrow{
+    font-size: 30px;
+    margin: 0 20px;
+    color: #000000;
+    cursor: pointer;
+}
+.arrow:hover{
+    color: #339933;
+}
+.arrow:active{
+    transform: scale(.9);
+}
+.active{
+    background-color: #339933;
+    color: #fff;
+}
+
+.hidden{
+    visibility: hidden;
+}

@@ -10,13 +10,17 @@
     display: grid;
     grid-auto-flow: column;
     gap: 15px;
+    position: relative;
 }
-
+.sort_param{
+    position: relative;
+}
 .field{
     padding: 10px;
     outline: none;
     border-radius: 10px;
     font-size: 18px;
+    color: #000;
 }
 .title{
     font-weight: 600;   
@@ -29,6 +33,7 @@
 .select{
     background: #ffffff;
     width: 200px;
+    color: #ACACAC;
 }
 .select *:checked{
     color: black;
@@ -64,13 +69,30 @@
 .price{
     font-weight: 500;
     font-size: 16px;
-    color: #ACACAC;
 }
 
 .filters_mobile, .close_button{
     display: none;
 }
 
+
+.price[type="number"]::-webkit-inner-spin-button,
+.price[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.price[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+.xmark_desctop{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    font-size: 18px;
+}
 
 @media (max-width: 768px){
     .close_button{

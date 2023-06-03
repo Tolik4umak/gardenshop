@@ -45,15 +45,18 @@ export default function FilterBar({checkboxShow}) {
   const handleFilterModal = () => {
     modal.current.classList.toggle(s.mobile_modal)
   }
+  const removeFilterKeyWords = () => {
+    setKeyWords('')
+  }
   const removeFilterMin = () => {
-    setPrice({...price, min: ''})
+    setPrice({...price, min: 0})
   }
   const removeFilterMax = () => {
     setPrice({...price, max: Infinity})
   }
 
   return (
-    <div className={s.wrapper}>
+    <>
 
       <div className={s.wrapper_container} ref={modal}>
         <div className={s.container} >
@@ -64,34 +67,57 @@ export default function FilterBar({checkboxShow}) {
               className={s.close_button}
             />
 
-            <input 
-              type="text" 
-              placeholder='search...' 
-              className={[s.search ,s.field].join(' ')}
-              value={keyWords} 
-              onChange={handleKeyWords}
-            />
-    
+            <div className={s.sort}>
+              <input 
+                type="text" 
+                placeholder='search...' 
+                className={s.field}
+                value={keyWords} 
+                onChange={handleKeyWords}
+              />
+              {
+                keyWords 
+                && 
+                <FontAwesomeIcon className={s.xmark_desctop} icon={faXmark} onClick={removeFilterKeyWords}/>
+              }
+            </div>
+        
             <div className={s.sort}>
                 <label className={s.title}>Price</label>
-                <input 
-                    onChange={minHandler}
-                    value={price.min === 0 ? '' : price.min}
-                    className={[s.price ,s.field].join(' ')} 
-                    name='minPrice' 
-                    type="number" 
-                    step={0.1}
-                    min="0" 
-                    placeholder='from' />
-                <input 
-                    onChange={maxHandler}
-                    value={price.max === 0  ? '' : price.max}
-                    className={[s.price ,s.field].join(' ')} 
-                    name='maxPrice' 
-                    type="number" 
-                    step={0.1}
-                    min="0" 
-                    placeholder='to' />
+                <div className={s.sort_param}>
+                  <input 
+                      onChange={minHandler}
+                      value={price.min === 0 ? '' : price.min}
+                      className={[s.price ,s.field].join(' ')} 
+                      name='minPrice' 
+                      type="number" 
+                      step={0.1}
+                      min="0" 
+                      placeholder='from' 
+                  />
+                  {
+                    price.min !== 0
+                    && 
+                    <FontAwesomeIcon className={s.xmark_desctop} icon={faXmark} onClick={removeFilterMin}/>
+                  }
+                </div>
+                <div className={s.sort_param}>
+                  <input 
+                      onChange={maxHandler}
+                      value={price.max === 0  ? '' : price.max}
+                      className={[s.price ,s.field].join(' ')} 
+                      name='maxPrice' 
+                      type="number" 
+                      step={0.1}
+                      min="0" 
+                      placeholder='to' 
+                  />
+                  {
+                    price.max !== Infinity  
+                    && 
+                    <FontAwesomeIcon className={s.xmark_desctop} icon={faXmark} onClick={removeFilterMax}/>
+                  }
+                </div>
             </div>
     
              <div className={[s.sort, !checkboxShow ? s.hidden : ''].join(' ')}>
@@ -104,7 +130,6 @@ export default function FilterBar({checkboxShow}) {
                   checked={isDiscount}
                 />
                 <label className={s.checkbox_label} htmlFor="discount">
-                    {/* <i className={[s.icon, "las la-check"].join(' ')}></i> */}
                     <FontAwesomeIcon className={s.icon} icon={faCheck} />
                 </label>
             </div>
@@ -131,47 +156,40 @@ export default function FilterBar({checkboxShow}) {
     
 
         {
-          !keyWords 
-          ? ('')
-          : (
-            <div className={s.filter_option}>
-              {keyWords}
-              <FontAwesomeIcon icon={faXmark} onClick={() => setKeyWords('')}/>
-            </div>
-          ) 
+          keyWords 
+          &&
+          <div className={s.filter_option}>
+            {keyWords}
+            <FontAwesomeIcon icon={faXmark} onClick={removeFilterKeyWords}/>
+          </div>
         }
         {
-          !price.min 
-          ? ('')
-          : (
-            <div className={s.filter_option}>
-              min: {price.min }
-              <FontAwesomeIcon icon={faXmark} onClick={removeFilterMin}/>
-            </div>
-          ) 
+          price.min !== 0 
+          &&
+          <div className={s.filter_option}>
+            min: {price.min }
+            <FontAwesomeIcon icon={faXmark} onClick={removeFilterMin}/>
+          </div>  
         }
          {
-          !price.max || price.max === Infinity
-          ? ('')
-          : (
-            <div className={s.filter_option}>
-              max: {price.max}
-              <FontAwesomeIcon icon={faXmark} onClick={removeFilterMax}/>
-            </div>
-          ) 
+          price.max !== Infinity
+          &&
+          <div className={s.filter_option}>
+            max: {price.max}
+            <FontAwesomeIcon icon={faXmark} onClick={removeFilterMax}/>
+          </div> 
         }
          {
           isDiscount
-          ? (
-            <div className={s.filter_option}>
-              only Discount
-              <FontAwesomeIcon icon={faXmark} onClick={() => setIsDiscount(false)} />
-            </div>
-          ):('') 
+          &&
+          <div className={s.filter_option}>
+            only Discount
+            <FontAwesomeIcon icon={faXmark} onClick={() => setIsDiscount(false)} />
+          </div>
         }
       </div>
 
       
-    </div>
+    </>
   )
 }

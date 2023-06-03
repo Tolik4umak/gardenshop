@@ -45,7 +45,7 @@ const productsSlice = createSlice({
         list: [],
         status: null,
         error: null,
-        telStatus: false,
+        telStatus: false
     },
     reducers: {
         searchFilterByKeyWords: (state, {payload}) => {
@@ -90,8 +90,8 @@ const productsSlice = createSlice({
         },
         resetProductsFilters: (state) => {
             state.list.sort((a,b) => {
-                a.show = {price: true, discont: true, keyWords: true }
-                b.show = {price: true, discont: true, keyWords: true}
+                a.show = {price: true, discont: true,  keyWords: true }
+                b.show = {price: true, discont: true,  keyWords: true}
                 return a.id - b.id
             })
         },
