@@ -8,6 +8,8 @@ import Order from '../../components/Order/Order'
 
 export default function BasketPage() {
 
+  document.title = 'Basket'
+
   const basket = useSelector(({basket, products}) => {
     return basket.list.map(item => {
       const target = products.list.find(({id}) => id === item.id)

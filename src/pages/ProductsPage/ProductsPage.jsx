@@ -19,14 +19,17 @@ export default function ProductsPage() {
  
   const {list , status, error}  = useSelector(state => {
     if(id === 'all'){
+      document.title = 'All Products';
       return state.products
     }else if(id === 'sales'){
+      document.title = 'All Sales';
       const filteredProducts = state.products.list.filter(({discont_price}) => discont_price)
       return {
         ...state.products,
         list: filteredProducts
       }
     }else{
+      document.title = `${category}`;
       const filteredProducts = state.products.list.filter(({categoryId}) => +categoryId === +id)
       return {
         ...state.products,
@@ -51,22 +54,6 @@ export default function ProductsPage() {
       <h2 className={s.category}>{curCategory}</h2>
 
       <FilterBar checkboxShow={id !== 'sales'}/>
-{/* 
-      <button value={8} onClick={(e) => {
-        setCurrentPage(Math.floor(startIndex / +e.target.value)+1)
-        setProductsPerPage(+e.target.value)
-        setLoader(+e.target.value)
-      }} >8</button>
-      <button value={12} onClick={(e) => {
-        setCurrentPage(Math.floor(startIndex / +e.target.value)+1)
-        setProductsPerPage(+e.target.value)
-        setLoader(+e.target.value)
-      }} >12</button>
-       <button value={16} onClick={(e) => {
-        setCurrentPage(Math.floor(startIndex / +e.target.value)+1)
-        setProductsPerPage(+e.target.value)
-        setLoader(+e.target.value)
-      }} >16</button> */}
 
       {
         status === 'rejected'
@@ -90,14 +77,17 @@ export default function ProductsPage() {
       }
 
       
-      <Pagination 
-        totalPages = {totalPages} 
-        currentPage={currentPage} 
-        setCurrentPage={setCurrentPage} 
-        loader={loader}
-        setLoader={setLoader} 
-        productsPerPage={productsPerPage}
-      />
+      { totalPages !== 0
+        &&
+        <Pagination 
+          totalPages = {totalPages} 
+          currentPage={currentPage} 
+          setCurrentPage={setCurrentPage} 
+          loader={loader}
+          setLoader={setLoader} 
+          productsPerPage={productsPerPage}
+        />
+      }
 
       <ToastContainer
           toastClassName={s.custom_toast}

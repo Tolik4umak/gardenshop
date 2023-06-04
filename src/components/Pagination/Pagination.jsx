@@ -42,12 +42,13 @@ export default function Pagination(
             {   totalPages<=8 
                 && 
                 pages.map(page => (
-                <p 
-                    className={[s.page, currentPage === page? s.active: ''].join(' ')}
-                    onClick={onCLickHandler}
-                >
-                    {page}
-                </p>
+                    <p  
+                        key={page}
+                        className={[s.page, currentPage === page? s.active: ''].join(' ')}
+                        onClick={onCLickHandler}
+                    >
+                        {page}
+                    </p>
                 ))
             }
             {
@@ -56,7 +57,7 @@ export default function Pagination(
                 <>
                     {
                         pages.slice(0,2).map(page => (
-                        <p 
+                        <p  key={page}
                             className={[s.page, currentPage === page? s.active: ''].join(' ')}
                             onClick={onCLickHandler}
                         >
@@ -73,7 +74,8 @@ export default function Pagination(
                                     ? 2 : currentPage+2>=totalPages? totalPages-5 : currentPage-2 , 
                                     currentPage <= 3? 5: currentPage+2>=totalPages? totalPages-2 : currentPage+1)
                                     .map(page => (
-                                        <p 
+                                        <p
+                                            key={page} 
                                             className={[s.page, currentPage === page? s.active: ''].join(' ')}
                                             onClick={onCLickHandler}
                                         >
@@ -86,7 +88,8 @@ export default function Pagination(
                     }
                     {
                         pages.slice(pages.length-2, pages.length).map(page => (
-                        <p 
+                        <p
+                            key={page}
                             className={[s.page, currentPage === page? s.active: ''].join(' ')}
                             onClick={onCLickHandler}
                         >

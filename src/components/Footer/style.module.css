@@ -1,6 +1,7 @@
 .footer{
     width: 100%;
     display: grid;
+    border-top: 1px dashed #99999925;
 }
 
 .googlemaps{
@@ -29,7 +30,7 @@
 }
 .tel{
     font-weight: 600;
-    font-size: 70px;
+    font-size: 40px;
     line-height: 130%;
 }
 
@@ -69,17 +70,19 @@
     line-height: 130%;
 }
 
-@media (max-width: 1100px){
-    .tel{
-        font-size: 6vw;
-    }
-}
+
 @media (max-width: 768px){
     .container{
         grid-template-columns: 1fr;
     }
-    .link{
-        font-size: 6vw;
+    .title{
+        font-size: 30px;
+    }
+    .link, .tel{
+        font-size: calc( 18px);
+    }
+    .social_item img{
+        width: 30px;
     }
 
 }

@@ -28,6 +28,9 @@
     transform: translateY(-10px);
     transition: .1s;
 }
+.arrow_hide{
+    display: none;
+}
 
 @keyframes shadow {
     from {

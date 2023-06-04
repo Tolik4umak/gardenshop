@@ -5,6 +5,7 @@ import ConteinerLayout from '../../layouts/ConteinerLayout/ConteinerLayout'
 import s from './style.module.css'
 
 export default function CategoriesPage() {
+  document.title = 'All Categories';
   const categories = useSelector(state => state.categories.list)
   return (
     <ConteinerLayout>

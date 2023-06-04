@@ -8,6 +8,7 @@ import BannerDiscount from '../../components/BannerDiscont/BannerDiscount';
 import BannerSale from '../../components/BannerSale/BannerSale';
 
 export default function HomePage() {
+  document.title = 'Home';
 
   const categories = useSelector(state => state.categories.list)
 

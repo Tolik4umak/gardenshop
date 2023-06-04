@@ -57,8 +57,8 @@ export default function ProductSinglePage() {
     if(status === 'resolve' && product){
 
         const {id, image, price, discont_price , title, description } = product
-        // console.log(product);
-
+        document.title = `Product - ${title.slice(0,20)}...`;
+        
         return (
             <ConteinerLayout>
                 <h2 className={s.title}>{title}</h2>
