@@ -66,8 +66,6 @@ export default function Pagination(
                         ))
                     }...
                     {
-                        // currentPage>1
-                        // &&
                         <div style={{display: 'flex', gap: '15px'}}>
                             { 
                                 pages.slice(currentPage <= 3

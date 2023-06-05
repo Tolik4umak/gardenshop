@@ -8,7 +8,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch, useSelector } from 'react-redux'
 import { applyDiscount } from '../../store/slice/sliceProducts'
 
-
 export default function BannerDiscount() {
 
   const telStatus = useSelector(({products}) => products.telStatus)

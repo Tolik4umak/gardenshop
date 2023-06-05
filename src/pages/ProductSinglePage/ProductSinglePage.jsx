@@ -8,8 +8,6 @@ import ButtonCust from '../../layouts/ButtonCust/ButtonCust'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
 export default function ProductSinglePage() {
 
     
@@ -77,7 +75,7 @@ export default function ProductSinglePage() {
                            fz={28}
                            my={40}
                         >
-                            To card
+                            To cart
                         </ButtonCust>
                         <div className={s.description}>
                             <h3 className={s.description_head}>Description</h3>

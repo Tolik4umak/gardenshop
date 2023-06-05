@@ -2,15 +2,11 @@ import React, { useEffect, useRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import s from './style.module.css'
 import logo from '../../images/logo.png'
-import basket from '../../images/basket_logo.svg'
 import { useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faBars , faXmark ,faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import ButtonCust from '../../layouts/ButtonCust/ButtonCust'
 import useResize from '../../hooks/useResize'
-
-
 
 export default function Nav() {
 
@@ -82,7 +78,7 @@ export default function Nav() {
               className={s.basket}
               onClick={burgerHandler}  
             >
-              <img src={basket}  alt=''/>
+              <FontAwesomeIcon icon={faCartShopping} />
             </Link> 
         </div>
 

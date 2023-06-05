@@ -46,8 +46,8 @@ export default function BasketPage() {
           </>
         ) :
         (
-          <h2>
-            your cart is currently empty
+          <h2 className={s.cart_empty}>
+            Your card is currently empty ;(
           </h2>
         )
       }

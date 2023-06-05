@@ -8,7 +8,6 @@ import FilterBar from '../../components/FilterBar/FilterBar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Pagination from '../../components/Pagination/Pagination';
-import ButtonCust from '../../layouts/ButtonCust/ButtonCust';
 
 
 export default function ProductsPage() {

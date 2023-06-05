@@ -3,7 +3,6 @@
     grid-template-columns: 2fr 1fr;
     gap: 30px;
 }
-
 .title{
     font-weight: 600;
     font-size: 36px;
@@ -15,7 +14,6 @@
     aspect-ratio: 1;
     object-fit: cover;
 }
-
 .info{
     display: flex;
     justify-content: space-between;
@@ -37,12 +35,10 @@
     font-weight: 600;
     color: #FF32A1;
 }
-
 .hide .full_price,
 .hide .discont{
     display: none;
 }
-
 .description{
     border-top: 1px dashed #C0C0C0;
 }
@@ -55,8 +51,6 @@
     font-weight: 500;
     font-size: 20px;
 }
-
-
 
 @media (max-width: 960px){
     .container{

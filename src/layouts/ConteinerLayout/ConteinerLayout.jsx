@@ -22,15 +22,13 @@ export default function ConteinerLayout({children}) {
 
   useEffect(()=>{
     const handleScroll = () => {
-      const scrollStatus = window.pageYOffset
+      const scrollStatus = window.scrollY
       setIsVisible(scrollStatus > 300)
     }
     window.addEventListener('scroll',handleScroll)
+
     return () => window.removeEventListener('scroll',handleScroll)
   },[])
-
-
-
 
   return (
     <div className={s.container}>

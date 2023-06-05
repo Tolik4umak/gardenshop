@@ -4,7 +4,6 @@ import useResize from '../../hooks/useResize'
 
 export default function ButtonCust(props) {
 
-
   const {
     className,
     onClick,

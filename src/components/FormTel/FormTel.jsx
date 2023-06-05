@@ -28,19 +28,20 @@ export default function FormTel({button, sendForm, btnStyle, inputStyle}) {
             })
           } 
           type='tel'
-          placeholder='+4912345678900'
+          placeholder='+49***********'
           style={{...inputStyle, border: errors.tel ? '1px solid #d32f2f': `${inputStyle.border}`}}
         />
 
         {errors.tel ? (<div className={s.err_label}>{errors.tel.message}</div>): ''}
 
       </div>
-      {/* <input className={s.btn} type='submit' value = {button} style={{display: 'none'}}/> */}
+
       <ButtonCust
           custStyle={btnStyle}
       >
           {button}
       </ButtonCust>
+
     </form>
   )
 }

@@ -9,9 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Order({orderPrice, orderList}) {
 
-  const dispatch = useDispatch()  
-
-      
+  const dispatch = useDispatch()       
   const handleForm = (data) => {
 
     const dataPost = {...data, orderList, orderPrice}

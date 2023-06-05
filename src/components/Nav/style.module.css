@@ -16,7 +16,6 @@
     display: flex;
     gap: 50px;
 }
-
 .container a {
     white-space: nowrap;
     text-decoration: none;
@@ -25,22 +24,29 @@
 .burger_bar , .burger_xmark{
     display: none;
 }
-
 .container .active{
     color: #339933;
 }
 .basket{
     position: relative;
+    font-size: 30px;
 }
 .basket::after{
     content: attr(data-count);
     display: block;
-    font-size: 18px;
-    color: #339933;
+    font-size: 16px;
+    color: #ffffff;
+    background: #339933;
+    border: 2px solid white;
     font-weight: 500;
     position: absolute;
     top: -15px;
-    left: 25px;
+    left: 21px;
+    border-radius: 50%;
+    line-height: 24px;
+    text-align: center;
+    width: 23px;
+    height: 23px;
 }
 
 

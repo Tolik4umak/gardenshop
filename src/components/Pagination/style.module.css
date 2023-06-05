@@ -16,7 +16,6 @@
     cursor: pointer;
     border-radius: 5px;
 }
-
 .arrow{
     font-size: 30px;
     margin: 0 20px;
@@ -33,7 +32,6 @@
     background-color: #339933;
     color: #fff;
 }
-
 .hidden{
     visibility: hidden;
 }

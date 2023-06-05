@@ -24,8 +24,6 @@ export const fetchProducts = createAsyncThunk(
                 }
             ))
             
-            console.log(clearData);
-
             return clearData
 
         }catch(error){

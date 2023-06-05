@@ -1,15 +1,13 @@
 import React from 'react'
 import s from './style.module.css'
 import { useDispatch } from 'react-redux'
-import { basketAddNewItem, basketDecrement, basketIncrement, basketRemove } from '../../store/slice/sliceBasket'
+import { basketDecrement, basketIncrement, basketRemove } from '../../store/slice/sliceBasket'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default function BasketItem({ 
     id,
     count,
-    categoryId,
-    description,
     discont_price,
     image,
     price,
