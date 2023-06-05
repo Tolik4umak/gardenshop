@@ -17,7 +17,6 @@ export default function BasketPage() {
     })
   })
 
-  console.log(basket)
   const orderList = basket.map( ({id, count}) => ({id,count}) )
   const orderPrice = basket.reduce((acc, {price, count, discont_price}) => acc + (discont_price || price)*count , 0)
 

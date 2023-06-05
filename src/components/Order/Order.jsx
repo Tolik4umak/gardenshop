@@ -13,11 +13,11 @@ export default function Order({orderPrice, orderList}) {
   const handleForm = (data) => {
 
     const dataPost = {...data, orderList, orderPrice}
-    if(orderList ===  []){
+    if(orderList !==  []){
         axios.post('http://localhost:3333/order/send',dataPost)
             .then(res => {
-                dispatch(basketClear())
                 toast.success("The order submission request has been successfully received", {icon: false})
+                setTimeout(() =>  dispatch(basketClear()), 4000)
             })
             .catch(err => {
                 toast.error(`${err.message}`, {icon: false})
@@ -59,7 +59,7 @@ export default function Order({orderPrice, orderList}) {
         />
        <ToastContainer
             position="top-center"
-            autoClose={5000}
+            autoClose={3000}
             theme='dark'
         />
 
