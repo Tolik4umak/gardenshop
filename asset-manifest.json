@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/gardenshop/static/css/main.60c91e66.css",
+    "main.js": "/gardenshop/static/js/main.7ac65298.js",
+    "static/media/flowers3.png": "/gardenshop/static/media/flowers3.1636412e609e02e1fdcd.png",
+    "static/media/discontBanner.png": "/gardenshop/static/media/discontBanner.07f969730d106e75cbfb.png",
+    "static/media/NotFoundBanner.png": "/gardenshop/static/media/NotFoundBanner.363754dc8a684cd09900.png",
+    "static/media/gnome.png": "/gardenshop/static/media/gnome.baa8b8583d88e3d9c23c.png",
+    "index.html": "/gardenshop/index.html",
+    "main.60c91e66.css.map": "/gardenshop/static/css/main.60c91e66.css.map",
+    "main.7ac65298.js.map": "/gardenshop/static/js/main.7ac65298.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.60c91e66.css",
+    "static/js/main.7ac65298.js"
+  ]
+}
