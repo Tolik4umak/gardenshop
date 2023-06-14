@@ -1,4 +1,4 @@
-# TELRAN MAIN PROJECT
+# Garden Shop
 
 Backeng avaliable [here](https://github.com/HaykInanc/telran_project_backend/tree/0bfc2ee51f1ffcf67c3381e77d8ef45618bbd12c).
 
