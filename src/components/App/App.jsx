@@ -24,7 +24,7 @@ function App() {
   return (
     <div className={s.wrapper}>
         <Routes>
-          <Route path='/gardenshop' element={<HomePage/>} />
+          <Route path='/' element={<HomePage/>} />
           <Route path='/categories' element={<CategoriesPage/>} />
           <Route path='/products/:category/:id' element={<ProductsPage/>} />
           <Route path='/product/:id' element={<ProductSinglePage/>} />
