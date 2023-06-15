@@ -38,7 +38,7 @@ export default function Nav() {
     <nav ref={burger} className={[s.container, s.burger_menu].join(' ')}>    
 
         <div className={s.menu_left}>
-            <Link onClick={burgerHandler} to={'/'}><img src={logo}  alt='' /></Link>
+            <Link onClick={burgerHandler} to={'/gardenshop'}><img src={logo}  alt='' /></Link>
             <ButtonCust
               w={125}
               h={50}
@@ -52,7 +52,7 @@ export default function Nav() {
            <div className={s.naw_links}>
               <NavLink 
                 className={isActive} 
-                to={'/'}
+                to={'/gardenshop'}
                 onClick={burgerHandler} 
               >
                   Main Page
