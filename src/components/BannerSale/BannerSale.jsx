@@ -21,7 +21,7 @@ export default function BannerSale() {
                background={'#232323'}
                color={'#fff'}          
             >
-                <Link to={'/products/category/sales'}>Sale</Link>
+                <Link to={'/gardenshop/products/category/sales'}>Sale</Link>
             </ButtonCust>
         </div>
 

@@ -45,7 +45,7 @@ export default function Nav() {
               fz={16}
               borderRadius={5}
             >
-              <Link onClick={burgerHandler} to={'/categories'}>Catalog</Link>
+              <Link onClick={burgerHandler} to={'/gardenshop/categories'}>Catalog</Link>
             </ButtonCust>
         </div>
         <div className={s.menu_rigth}>
@@ -60,20 +60,20 @@ export default function Nav() {
               <NavLink 
                 onClick={burgerHandler} 
                 className={isActive} 
-                to={'/products/allcategorys/all'} 
+                to={'/gardenshop/products/allcategorys/all'} 
               >
                   All Products
               </NavLink>
               <NavLink 
                 onClick={burgerHandler} 
                 className={isActive} 
-                to={'/products/allcategorys/sales'}
+                to={'/gardenshop/products/allcategorys/sales'}
               >
                   All sales
               </NavLink> 
            </div>
             <Link  
-              to={'/basket'} 
+              to={'/gardenshop/basket'} 
               data-count={basketCount} 
               className={s.basket}
               onClick={burgerHandler}  

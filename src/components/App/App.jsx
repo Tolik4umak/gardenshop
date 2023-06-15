@@ -25,12 +25,12 @@ function App() {
     <div className={s.wrapper}>
         <Routes>
           <Route path='/gardenshop' element={<HomePage/>} />
-          <Route path='/categories' element={<CategoriesPage/>} />
-          <Route path='/products/:category/:id' element={<ProductsPage/>} />
-          <Route path='/product/:id' element={<ProductSinglePage/>} />
-          <Route path='/basket' element={<BasketPage/>} />
-          <Route path='/*' element={<NotFoundPage/>} /> 
-          <Route path='/notfound' element={<NotFoundPage/>} /> 
+          <Route path='/gardenshop/categories' element={<CategoriesPage/>} />
+          <Route path='/gardenshop/products/:category/:id' element={<ProductsPage/>} />
+          <Route path='/gardenshop/product/:id' element={<ProductSinglePage/>} />
+          <Route path='/gardenshop/basket' element={<BasketPage/>} />
+          <Route path='/gardenshop/*' element={<NotFoundPage/>} /> 
+          <Route path='/gardenshop/notfound' element={<NotFoundPage/>} /> 
         </Routes>
     </div>
   );
