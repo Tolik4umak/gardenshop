@@ -7,6 +7,7 @@ import { basketAddNewItem } from '../../store/slice/sliceBasket'
 import ButtonCust from '../../layouts/ButtonCust/ButtonCust'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Zoom from '../../components/Zoom/Zoom'
 
 export default function ProductSinglePage() {
 
@@ -61,7 +62,8 @@ export default function ProductSinglePage() {
             <ConteinerLayout>
                 <h2 className={s.title}>{title}</h2>
                 <div className={s.container}>
-                    <img className={s.img} src={image} alt="title" />
+                    <Zoom image = {image} alt={title}/>
+                    {/* <img className={s.img} src={image} alt="title" /> */}
                     <div className={s.about}>
                         <div className={[s.info, !discont_price ? s.hide: ''].join(' ')}>
                             <div className={s.final_price}>{discont_price ? discont_price: price}$</div>

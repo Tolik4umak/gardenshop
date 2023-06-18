@@ -43,7 +43,7 @@ export default function ProductItem({
   }
 
   return (
-    <Link to={`/product/${id}`} className={s.container}>
+    <Link to={`/gardenshop/product/${id}`} className={s.container}>
         <div className={s.img_wrapper}>
             <img className={s.img} src={image} alt={title} />
         </div>

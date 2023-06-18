@@ -1,0 +1,35 @@
+.wrap{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.img{
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    cursor: none;
+
+}
+
+.loup{
+    width: 100px;
+    height: 100px;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    display: none;
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.281), 10px 10px 30px rgba(0, 0, 0, 0.568);
+}
+
+@media ( max-width: 768px){
+    .img{
+        cursor: default;
+    }
+}
