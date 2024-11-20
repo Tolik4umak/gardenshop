@@ -6,7 +6,7 @@ export const fetchProducts = createAsyncThunk(
     async (_, {rejectWithValue}) => {
         
         try{
-            const res = await fetch('http://localhost:3333/products/all')
+            const res = await fetch('https://dry-island-42334-f1f2e58883c2.herokuapp.com/products/all')
             if(!res.ok){
                 throw new Error('Server error!')
             }
@@ -15,7 +15,7 @@ export const fetchProducts = createAsyncThunk(
             const clearData = data.map(item => (
                 {
                     ...item, 
-                    image: `http://localhost:3333/${item.image}`,
+                    image: `https://dry-island-42334-f1f2e58883c2.herokuapp.com/${item.image}`,
                     show: {
                         price: true,
                         discont: true,
@@ -32,8 +32,8 @@ export const fetchProducts = createAsyncThunk(
     }
 )
 
-const getFinalPrice = ({price, discont_price}) => {
-    return discont_price || price
+const getFinalPrice = ({price, discount_price}) => {
+    return discount_price || price
 } 
 
 
@@ -58,7 +58,7 @@ const productsSlice = createSlice({
         searchFilterByPrice: (state, {payload}) => {
             const {min, max} = payload
             state.list.map(item => {
-                const finalPrice = item.discont_price || item.price
+                const finalPrice = item.discount_price || item.price
                 if(min <= finalPrice && finalPrice <= max){
                     item.show.price = true
                 }else{
@@ -69,7 +69,7 @@ const productsSlice = createSlice({
         searchFilterByDiscount: (state, {payload}) => {
             state.list.map(item => {
                 if(payload){
-                    item.show.discont = item.discont_price ? true : false
+                    item.show.discont = item.discount_price ? true : false
                 }else{
                     item.show.discont = true
                 }
@@ -94,9 +94,9 @@ const productsSlice = createSlice({
             })
         },
         applyDiscount: (state) => {
-            state.list = state.list.map(({discont_price, ...item}) => ({
+            state.list = state.list.map(({discount_price, ...item}) => ({
                 ...item,
-                discont_price: discont_price ? discont_price : +(item.price * 95 / 100).toFixed(2)
+                discount_price: discount_price ? discount_price : +(item.price * 95 / 100).toFixed(2)
             }))
             state.telStatus = true
         }

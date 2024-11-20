@@ -5,13 +5,13 @@ import axios from "axios";
 export const fetchCategories = createAsyncThunk(
     'categoryes/fetchCategories',
     (_, {rejectWithValue}) => {
-        return axios.get('http://localhost:3333/categories/all')
+        return axios.get('https://dry-island-42334-f1f2e58883c2.herokuapp.com/categories/all')
                 .then(res => {
 
                     const categories = res.data.map(item => (
                         {
                             ...item, 
-                            image: `http://localhost:3333/${item.image}`
+                            image: `https://dry-island-42334-f1f2e58883c2.herokuapp.com/${item.image}`
                         }
                     ))
 

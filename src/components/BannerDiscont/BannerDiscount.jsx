@@ -15,7 +15,7 @@ export default function BannerDiscount() {
 
 
   const handleForm = (data) => {
-    axios.post('http://localhost:3333/sale/send',data)
+    axios.post('https://dry-island-42334-f1f2e58883c2.herokuapp.com/sale/send',data)
     .then(res => {
       if(!telStatus){
         toast.success("Discount is applied", {icon: false})

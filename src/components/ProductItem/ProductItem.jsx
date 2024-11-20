@@ -9,7 +9,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 export default function ProductItem({
     id,
-    discont_price,
+    discount_price,
     image,
     price,
     title
@@ -47,10 +47,10 @@ export default function ProductItem({
         <div className={s.img_wrapper}>
             <img className={s.img} src={image} alt={title} />
         </div>
-        <div className={[s.info, !discont_price ? s.hide: ''].join(' ')}>
-            <div className={s.final_price}>{discont_price ? discont_price: price}$</div>
+        <div className={[s.info, !discount_price ? s.hide: ''].join(' ')}>
+            <div className={s.final_price}>{discount_price ? discount_price: price}$</div>
             <div className={s.full_price}>{price}$</div>
-            <div className={s.discont}>-{((price - discont_price) / price * 100).toFixed(1)}%</div>
+            <div className={s.discont}>-{((price - discount_price) / price * 100).toFixed(1)}%</div>
         </div>
         <div className={s.title}>{title}</div> 
         <FontAwesomeIcon

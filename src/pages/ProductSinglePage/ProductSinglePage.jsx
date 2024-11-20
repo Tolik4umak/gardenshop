@@ -55,7 +55,7 @@ export default function ProductSinglePage() {
     
     if(status === 'resolve' && product){
 
-        const {id, image, price, discont_price , title, description } = product
+        const {id, image, price, discount_price , title, description } = product
         document.title = `Product - ${title.slice(0,20)}...`;
         
         return (
@@ -65,10 +65,10 @@ export default function ProductSinglePage() {
                     <Zoom image = {image} alt={title}/>
                     {/* <img className={s.img} src={image} alt="title" /> */}
                     <div className={s.about}>
-                        <div className={[s.info, !discont_price ? s.hide: ''].join(' ')}>
-                            <div className={s.final_price}>{discont_price ? discont_price: price}$</div>
+                        <div className={[s.info, !discount_price ? s.hide: ''].join(' ')}>
+                            <div className={s.final_price}>{discount_price ? discount_price: price}$</div>
                             <div className={s.full_price}>{price}$</div>
-                            <div className={s.discont}>{((price - discont_price) / price * 100).toFixed(1)}%</div>
+                            <div className={s.discont}>{((price - discount_price) / price * 100).toFixed(1)}%</div>
                         </div>
                         <ButtonCust
                            onClick={handleOnCLick}

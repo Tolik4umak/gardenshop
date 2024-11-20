@@ -22,7 +22,7 @@ export default function ProductsPage() {
       return state.products
     }else if(id === 'sales'){
       document.title = 'All Sales';
-      const filteredProducts = state.products.list.filter(({discont_price}) => discont_price)
+      const filteredProducts = state.products.list.filter(({discount_price}) => discount_price)
       return {
         ...state.products,
         list: filteredProducts
