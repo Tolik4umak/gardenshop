@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/gardenshop/static/css/main.3a88d27b.css",
-    "main.js": "/gardenshop/static/js/main.176f8206.js",
+    "main.js": "/gardenshop/static/js/main.88e9cead.js",
     "static/media/flowers3.png": "/gardenshop/static/media/flowers3.1636412e609e02e1fdcd.png",
     "static/media/discontBanner.png": "/gardenshop/static/media/discontBanner.07f969730d106e75cbfb.png",
     "static/media/NotFoundBanner.png": "/gardenshop/static/media/NotFoundBanner.363754dc8a684cd09900.png",
     "static/media/gnome.png": "/gardenshop/static/media/gnome.baa8b8583d88e3d9c23c.png",
     "index.html": "/gardenshop/index.html",
     "main.3a88d27b.css.map": "/gardenshop/static/css/main.3a88d27b.css.map",
-    "main.176f8206.js.map": "/gardenshop/static/js/main.176f8206.js.map"
+    "main.88e9cead.js.map": "/gardenshop/static/js/main.88e9cead.js.map"
   },
   "entrypoints": [
     "static/css/main.3a88d27b.css",
-    "static/js/main.176f8206.js"
+    "static/js/main.88e9cead.js"
   ]
 }
